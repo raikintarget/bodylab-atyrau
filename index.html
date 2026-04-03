@@ -356,20 +356,36 @@ section { padding: 100px 24px; }
   max-width: 700px;
   margin-bottom: 3rem;
 }
-.masters-grid {
+.masters-grid, .masters-grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-top: 3rem;
 }
+.masters-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.masters-grid-3 { grid-template-columns: repeat(3, 1fr); }
 .master-card {
   background: linear-gradient(135deg, rgba(201,169,110,0.05), rgba(255,255,255,0.02));
   border: 1px solid rgba(201,169,110,0.12);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 0 0 2rem;
   text-align: center;
   transition: transform 0.4s;
+  overflow: hidden;
 }
 .master-card:hover { transform: scale(1.03); }
+.master-photo {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+.master-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s;
+}
+.master-card:hover .master-photo img { transform: scale(1.05); }
 .master-avatar {
   width: 90px; height: 90px;
   border-radius: 50%;
@@ -384,7 +400,8 @@ section { padding: 100px 24px; }
 .master-card h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
-  margin-bottom: 0.3rem;
+  margin: 1.2rem 0 0.3rem;
+  padding: 0 1.5rem;
 }
 .master-card .role {
   color: var(--gold);
@@ -392,15 +409,18 @@ section { padding: 100px 24px; }
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  padding: 0 1.5rem;
 }
 .master-card p {
   color: var(--text-muted);
   font-size: 0.88rem;
   line-height: 1.7;
+  padding: 0 1.5rem;
 }
 .master-card .certs {
   margin-top: 1rem;
   display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+  padding: 0 1rem;
 }
 .cert-tag {
   padding: 4px 12px;
@@ -409,25 +429,6 @@ section { padding: 100px 24px; }
   font-size: 0.7rem;
   color: var(--gold-light);
   letter-spacing: 1px;
-}
-.master-photo {
-  width: 140px; height: 140px;
-  border-radius: 50%;
-  margin: 0 auto 1.5rem;
-  overflow: hidden;
-  border: 3px solid rgba(201,169,110,0.4);
-  box-shadow: 0 0 30px rgba(201,169,110,0.15);
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.master-card:hover .master-photo {
-  border-color: var(--gold);
-  box-shadow: 0 0 40px rgba(201,169,110,0.3);
-}
-.master-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
 }
 
 /* ===== RESULTS ===== */
@@ -688,6 +689,8 @@ footer a { color: var(--gold); text-decoration: none; }
   .wa-float { width: 56px; height: 56px; bottom: 20px; right: 20px; }
   .wa-float svg { width: 28px; height: 28px; }
   .wa-float-label { display: none; }
+  .masters-grid-3 { grid-template-columns: 1fr; }
+  .master-photo { height: 320px; }
 }
 </style>
 </head>
@@ -814,39 +817,36 @@ footer a { color: var(--gold); text-decoration: none; }
   <div class="container">
     <p class="section-label reveal">Наши мастера</p>
     <h2 class="section-title reveal">Именно к этим <span style="color:var(--gold)">мастерам</span><br>приходят к нам</h2>
-    <p class="masters-intro reveal">Наши мастера — сертифицированные косметологи. Каждый специалист прошёл специальное обучение по лазерной эпиляции и постоянно повышает квалификацию. Клиенты выбирают нас не только за аппарат, но и за профессионализм и заботу наших мастеров.</p>
-    <div class="masters-grid">
+    <p class="masters-intro reveal">Наши специалисты — не просто косметологи. Это профессионалы с медицинским образованием, сертификатами международного уровня и тысячами успешных процедур за плечами. Каждый мастер проходит регулярное повышение квалификации. Клиенты возвращаются именно к ним — за результатом и доверием.</p>
+    <div class="masters-grid masters-grid-3">
       <div class="master-card reveal">
-        <div class="master-photo"><img src="master1.jpg" alt="Ксения" loading="lazy"></div>
+        <div class="master-photo"><img src="master1.jpg" alt="Мастер Ксения" loading="lazy"></div>
         <h3>Ксения</h3>
         <div class="role">Эстет-лазерист</div>
-        <p>Специалист по лазерной эпиляции с глубоким пониманием физиологии кожи. Работает с любым фототипом — от светлой до смуглой кожи. Точность, деликатность и стойкий результат с первого сеанса. За плечами — сотни благодарных клиентов и безупречная техника работы на аппарате Diode Duo Pro.</p>
+        <p>Специалист с глубоким пониманием лазерных технологий и искренней заботой о каждом клиенте. Ксения точно знает, как добиться идеально гладкой кожи без раздражений и дискомфорта. Её клиенты записываются повторно уже после первого сеанса.</p>
         <div class="certs">
-          <span class="cert-tag">Лазер-специалист</span>
-          <span class="cert-tag">Diode Duo Pro</span>
-          <span class="cert-tag">Сертификат 2024</span>
+          <span class="cert-tag">Лазерные технологии</span>
+          <span class="cert-tag">3000+ процедур</span>
         </div>
       </div>
       <div class="master-card reveal">
-        <div class="master-photo"><img src="master2.jpg" alt="Багдагуль" loading="lazy"></div>
+        <div class="master-photo"><img src="master2.jpg" alt="Мастер Багдагуль" loading="lazy"></div>
         <h3>Багдагуль</h3>
         <div class="role">Косметолог-эстетист</div>
-        <p>Мастер с тонким эстетическим чутьём и медицинским подходом к уходу за кожей. Проводит консультации по типу кожи перед каждой процедурой. Её клиенты отмечают не только результат, но и комфорт во время сеансов — минимум дискомфорта, максимум эффекта.</p>
+        <p>Мастер с уникальным чувством кожи и индивидуальным подходом к каждому клиенту. Багдагуль специализируется на работе с чувствительной кожей и сложными зонами. Безупречная техника и внимание к деталям — её визитная карточка.</p>
         <div class="certs">
-          <span class="cert-tag">Дерматология</span>
-          <span class="cert-tag">Косметология</span>
+          <span class="cert-tag">Дерматокосметология</span>
           <span class="cert-tag">Сертификат 2024</span>
         </div>
       </div>
       <div class="master-card reveal">
-        <div class="master-photo"><img src="master3.jpg" alt="Нелли" loading="lazy"></div>
+        <div class="master-photo"><img src="master3.jpg" alt="Мастер Нелли" loading="lazy"></div>
         <h3>Нелли</h3>
         <div class="role">Ведущий специалист</div>
-        <p>Ведущий специалист BodyLab с наибольшим опытом в команде. Эксперт в сложных зонах, работает с чувствительной кожей и нестандартными случаями. Проводит обучение новых мастеров и следит за стандартами качества. К Нелли записываются за месяц — и это говорит само за себя.</p>
+        <p>Ведущий специалист клиники с многолетним опытом в лазерной эпиляции, СПА-процедурах, массаже тела и лица, RF-лифтинге. Нелли — мастер широкого профиля, которому доверяют самые требовательные клиенты. Результат с первого визита.</p>
         <div class="certs">
-          <span class="cert-tag">Ведущий эксперт</span>
-          <span class="cert-tag">Наставник</span>
-          <span class="cert-tag">5+ лет опыта</span>
+          <span class="cert-tag">Лазерная эпиляция</span>
+          <span class="cert-tag">СПА · Массаж · RF</span>
         </div>
       </div>
     </div>
