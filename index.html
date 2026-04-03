@@ -410,6 +410,25 @@ section { padding: 100px 24px; }
   color: var(--gold-light);
   letter-spacing: 1px;
 }
+.master-photo {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+  border: 3px solid rgba(201,169,110,0.4);
+  box-shadow: 0 0 30px rgba(201,169,110,0.15);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.master-card:hover .master-photo {
+  border-color: var(--gold);
+  box-shadow: 0 0 40px rgba(201,169,110,0.3);
+}
+.master-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 
 /* ===== RESULTS ===== */
 .results { background: var(--dark); }
@@ -799,22 +818,35 @@ footer a { color: var(--gold); text-decoration: none; }
     <div class="masters-grid">
       <div class="master-card reveal">
         <div class="master-photo"><img src="master1.jpg" alt="Ксения" loading="lazy"></div>
-        <h3>Айгерим</h3>
-        <div class="role">Старший косметолог</div>
-        <p>5+ лет опыта. Сертификаты по лазерным технологиям из Алматы и Астаны. 2000+ успешных процедур.</p>
+        <h3>Ксения</h3>
+        <div class="role">Эстет-лазерист</div>
+        <p>Специалист по лазерной эпиляции с глубоким пониманием физиологии кожи. Работает с любым фототипом — от светлой до смуглой кожи. Точность, деликатность и стойкий результат с первого сеанса. За плечами — сотни благодарных клиентов и безупречная техника работы на аппарате Diode Duo Pro.</p>
         <div class="certs">
           <span class="cert-tag">Лазер-специалист</span>
+          <span class="cert-tag">Diode Duo Pro</span>
           <span class="cert-tag">Сертификат 2024</span>
         </div>
       </div>
       <div class="master-card reveal">
         <div class="master-photo"><img src="master2.jpg" alt="Багдагуль" loading="lazy"></div>
-        <h3>Динара</h3>
+        <h3>Багдагуль</h3>
         <div class="role">Косметолог-эстетист</div>
-        <p>3+ года опыта в лазерной эпиляции. Индивидуальный подход к каждому клиенту. Надёжная база постоянных клиентов.</p>
+        <p>Мастер с тонким эстетическим чутьём и медицинским подходом к уходу за кожей. Проводит консультации по типу кожи перед каждой процедурой. Её клиенты отмечают не только результат, но и комфорт во время сеансов — минимум дискомфорта, максимум эффекта.</p>
         <div class="certs">
           <span class="cert-tag">Дерматология</span>
-          <span class="cert-tag">Лазер-специалист</span>
+          <span class="cert-tag">Косметология</span>
+          <span class="cert-tag">Сертификат 2024</span>
+        </div>
+      </div>
+      <div class="master-card reveal">
+        <div class="master-photo"><img src="master3.jpg" alt="Нелли" loading="lazy"></div>
+        <h3>Нелли</h3>
+        <div class="role">Ведущий специалист</div>
+        <p>Ведущий специалист BodyLab с наибольшим опытом в команде. Эксперт в сложных зонах, работает с чувствительной кожей и нестандартными случаями. Проводит обучение новых мастеров и следит за стандартами качества. К Нелли записываются за месяц — и это говорит само за себя.</p>
+        <div class="certs">
+          <span class="cert-tag">Ведущий эксперт</span>
+          <span class="cert-tag">Наставник</span>
+          <span class="cert-tag">5+ лет опыта</span>
         </div>
       </div>
     </div>
